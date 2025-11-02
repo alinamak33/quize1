@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Stylish Quiz Game</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="quiz-container">
+    <h1 class="glow">🎯 Quiz Challenge</h1>
+
+    <!-- LOGIN PAGE -->
+    <div id="login-box">
+      <h2>Enter Your Name</h2>
+      <input type="text" id="username" placeholder="Your Name..." />
+      <button onclick="startQuiz()">Start Quiz</button>
+    </div>
+
+    <!-- QUIZ PAGE -->
+    <div id="quiz-box" class="hidden">
+      <h2 id="question">Loading question...</h2>
+      <div id="options"></div>
+      <button id="next-btn">Next</button>
+    </div>
+
+    <!-- RESULT PAGE -->
+    <div id="result-box" class="hidden">
+      <h2>Quiz Finished!</h2>
+      <p id="player-name"></p>
+      <p id="score"></p>
+      <button onclick="restartQuiz()">Play Again</button>
+    </div>
+  </div>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
